@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules
+module load eb
+module load Miniconda2
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+
+#joining reads together using minimum overlap 240 of max diff 20% 
+echo "joining reads"
+join_paired_ends.py -f /home/cbmucl08/2018_seqdata/Read1.fastq -r /home/cbmucl08/2018_seqdata/Read2.fastq -b /home/cbmucl08/2018_seqdata/Index.fastq -o /home/cbmucl08/outputs/fastq-join_joined_2 -j 240 -p 20
+echo "finished joining reads"
+
+source deactivate
+

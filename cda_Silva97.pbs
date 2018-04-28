@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+#core diveristy analysis using the Silva 128 release database, the filtered biom sample, and 23365 minimum counts
+echo "core diversity analysis"
+time core_diversity_analyses.py -i ~/outputs/OTUS_PICKING/otu_table_filtered.biom -o ~/outputs/CDA/cda_out -m ~/2018_seqdata/mapping_file_final.txt -t ~/seqref/SILVA_128_QIIME_release/trees/97/97_otus.tre -e 23365
+
+echo "finished core diversity analysis"
+source deactivate

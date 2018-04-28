@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules
+module load eb
+module load Miniconda2
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+# determining statistically significant abundant taxa associated with Rhizosphere samples
+echo "calculating group significance"
+time group_significance.py -i ~/outputs/OTUS_PICKING/otu_table_filtered_final.biom -m ~/2018_seqdata/mapping_file_final.txt -c Rhizosphere -s ANOVA -o ~/outputs/ANALYSIS/group_significance/group_significance_rhizo.txt
+echo "finished"
+source deactivate 
+

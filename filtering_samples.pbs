@@ -1,0 +1,21 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+#filtering samples that have less than 1000 counts (sample 13)
+echo "filtering samples"
+time filter_samples_from_otu_table.py -i ~/outputs/OTU_PICKING/otu_table_filtered.biom -o ~/outputs/OTUS_PICKING/otu_table_filtered_final.biom -n 1000
+echo "finished filtering samples"
+source deactivate

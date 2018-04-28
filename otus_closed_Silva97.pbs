@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules to run python
+module load eb
+module load Miniconda2
+
+source deactivate
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+# picking OTUs using the Silva 128 database
+echo "Picking OTUs"
+time pick_closed_reference_otus.py -i ~/outputs/SPLIT_LIBRARIES/slout_NEW -r ~/SILVA_128_QIIME_release/rep_set/rep_set_16S_only/97/97_otus_16S.fasta -o ~/outputs/OTUS_PICKING/closed_ref_otus_Silva97 -t ~/seqref/SILVA_128_QIIME_release/taxonomy/16S_only/97/consensus_taxonomy_all_levels.txt -a -O 16
+echo "Finished picking OTUs"
+
+source deactivate
+
+

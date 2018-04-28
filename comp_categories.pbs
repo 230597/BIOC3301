@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH -t 1:00:00
+#SBATCH -n 24
+#SBATCH -p short
+
+#Load modules
+module load eb
+module load Miniconda2
+
+# loading virtualenv
+echo "loading virtualenv"
+source activate qiime1
+
+# setting temporary directory
+export TMPDIR=~/qiime_tmp
+
+# carrying out comparing categories script for nitrogen content
+echo "comparing categories"
+time compare_categories.py --method anosim -i ~/outputs/CDA/cda_out/bdiv_even23365/weighted_unifrac_dm.txt -m ~/2018_seqdata/mapping_file_final.txt -c SampleNitrogen -o ~/outputs/ANALYSIS/anoism_TESTING/anoism_weighted_nitrogen -n 99
+
+echo "finished comparing categories"
+
+source deactivate
