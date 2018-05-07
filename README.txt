@@ -1,8 +1,8 @@
 # BIOC3301
 
-This repository contains batch scripts used to submit to Cartesius HPC for the analysis of soil microbiome sequencing data using QIIME.
+This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1.
 
-Analysis Workflow:
+Analysis Workflow Order:
 
 1) joining_reads.pbs - Joins Read1 and Read2 sequencing data to create one file for use in subsequent analyses.
 2) split_lib_out.pbs - Carries out barcode assignment and quality filtering of samples using Phred score 20.
