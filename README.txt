@@ -1,6 +1,7 @@
 # BIOC3301
 
 This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1.
+This set of scripts is used to determine patterns of bacterial abundance and diversity with soil metadata categories.
 
 Analysis Workflow Order:
 
