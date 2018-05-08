@@ -13,6 +13,6 @@ This repository contains batch scripts used to submit to the Cartesius HPC for t
 5) filtering_samples.pbs - Filters the new biom table to remove samples containing less than 1000 counts/sample.
 6) cda_Silva97.pbs - Carries out core diversity analysis of the final biom table to output taxa summaries, alpha diveristy and beta diversity metrics.
 7) comp_categories.pbs - Uses the ANOSIM stastistical method to compare soil categories using beta diversity matrices.
-8) group_significance.pbs - Uses ANOVA statistical method to validate the differential abundance of individual species between soil sample category groupings.
+8) group_significance.pbs - Uses the ANOVA statistical method to validate the differential abundance of individual species between soil sample category groupings.
 
 
