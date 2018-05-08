@@ -1,8 +1,8 @@
-# Understanding Plant Growth-Promoting Bacteria in Soil
+# Understanding the Diversity and Abundance of PGPB in Soil
 
 ## Information
 
-This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1. The resulting data can be used to provide information on diversity and abundance of specific groups of plant growth-promoting bacteria.
+This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1. The resulting data can be used to provide information on diversity and abundance of specific groups of plant growth-promoting bacteria (PGPB).
 
 ## Analysis Workflow
 
