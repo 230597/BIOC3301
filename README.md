@@ -1,9 +1,10 @@
-# BIOC3301
+# Understanding the Diveristy and Abundance of Plant Growth-Promoting Bacteria in Soil
 
-This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1.
-This set of scripts is used to determine patterns of bacterial abundance and diversity with soil metadata categories.
+## Information
 
-Analysis Workflow Order:
+This repository contains batch scripts used to submit to the Cartesius HPC for the analysis of Illumina MiSeq soil microbiome sequencing data using QIIME 1.9.1. The resulting data can be used to provide information on specific groups of plant growth-promoting bacteria.
+
+## Analysis Workflow
 
 1) joining_reads.pbs - Joins Read1 and Read2 sequencing data to create one file for use in subsequent analyses.
 2) split_lib_out.pbs - Carries out barcode assignment and quality filtering of samples using Phred score 20.
